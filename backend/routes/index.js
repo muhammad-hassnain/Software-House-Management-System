@@ -9,27 +9,19 @@ var users = [
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  console.log(req)
+  console.log(res)
   res.send("Welcome to backend");
 });
 
-router.post('/login', function(req, res) {
-  // let result = users.find(user=> user.email === req.body.email)
-  // if (result){
-  //   if (result.password == req.body.password){
-  //     res.status(200).send({
-  //       message : 'Successful Login!'
-  //     })
-  //   }else{
-  //     res.status(200).send({
-  //       message : 'password incorrect'
-  //     })
-  //   }
-  // } else {
-  //   res.status(200).send({
-  //     message : 'User not found!'
-  //   })
-  // }
+router.get('/createProject', function(req, res, next) {
+  console.log(req)
+  // console.log(res)
+  // res.send("Welcome to backend");
+});
 
+router.post('/login', function(req, res) {
+  // console.log("herer " , req.body)
   const {email, password} = req.body;
   if(email && password) {
     try{
@@ -42,5 +34,7 @@ router.post('/login', function(req, res) {
     
   }
 })
+
+
 
 module.exports = router;

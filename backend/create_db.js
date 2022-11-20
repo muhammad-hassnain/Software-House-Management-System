@@ -55,7 +55,10 @@ const createTablePromised = promisify(createTable)
 */
 const queries = ["CREATE TABLE IF NOT EXISTS soft_management.account_info (email_address varchar(200) PRIMARY KEY, password varchar(200))",
 "CREATE TABLE IF NOT EXISTS soft_management.projects ( id int PRIMARY KEY, name varchar(200),  start_time time, end_time time, revenue int, client_id int, assigned_to_pm int, status varchar(200))",
+"CREATE TABLE IF NOT EXISTS soft_management.employees (id int PRIMARY KEY, first_name varchar(255), last_name varchar(255), designation varchar(63), hired_on date)",
+"CREATE TABLE IF NOT EXISTS soft_management.account_info (employee_id int, email_address varchar(255) PRIMARY KEY, password varchar(511), FOREIGN KEY (employee_id) REFERENCES employees(id))"
 ];
+
 
 
 connectionString.connect( (error)=>

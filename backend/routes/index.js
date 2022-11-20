@@ -43,4 +43,30 @@ router.post('/login', function(req, res) {
   }
 })
 
+router.post('/updatepassword', function(req, res) {
+  console.log(req.body.employee.id);
+  const response = {
+    success: false,
+    errormessage: ''
+  };
+  // console.log(db);
+  // `SELECT password FROM software_management.account_info WHERE employee_id=${req.body.employee.id}`
+  db.query("SELECT * FROM account_info WHERE employee_id=?;", [req.body.employee.id], (err, rows) => {
+    if (rows[0].password != req.body.oldpassword) {
+      response.errormessage += 'Wrong password. ';
+    } else if (req.body.newpassword != req.body.newpasswordconfirmation) {
+      response.errormessage += 'New passwords don\'t match.';
+    } else {
+      db.query(`UPDATE account_info SET password=? WHERE employee_id=?`, [req.body.newpassword, req.body.employee.id])
+    }
+
+    if (response.errormessage == '')
+    {
+      response.success = true;
+    }
+
+    res.send(JSON.stringify(response));
+  })
+})
+
 module.exports = router;

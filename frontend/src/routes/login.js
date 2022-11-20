@@ -8,7 +8,7 @@ function DoLogin() {
   return (
     <div className="App">
       <h1>Login</h1>
-      <form onSubmit={(e) => login(e)}>
+      <form onSubmit={(e) => validatesForm(e)}>
         <label> Email: </label><br/>
         <input type="email" id='email'></input><br/>
         <label> Password: </label><br/>
@@ -20,14 +20,33 @@ function DoLogin() {
 
   );
 }
+
+function validatesForm(e) {
+  e.preventDefault();
+  let email = document.getElementById('email').value;
+  let password = document.getElementById('password').value;
+  if (email == "" || password == "") {
+    alert("Please fill in all fields");
+  }
+  else if(email.includes("@")) {
+    console.log("here")
+    alert("Please enter a valid email address");
+  }
+  else {
+    alert("here2");
+    // login(e);
+  }
+}
+
+
 function login(e) {
   e.preventDefault();
   let request = {
     email: document.getElementById('email').value,
     password: document.getElementById('password').value }
-  axios.post('http://localhost:3000/login', request)
+  axios.post('http://localhost:8080/login', request)
   .then(resp => {
-    alert(resp.data.message);
+    alert(JSON.stringify(resp.data, null,2));
   })
   .catch( err => {
     console.log(err);

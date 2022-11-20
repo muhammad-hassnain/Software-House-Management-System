@@ -1,6 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
 
 const SignUp = () => {
   const formik = useFormik({
@@ -22,6 +23,9 @@ const SignUp = () => {
 
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
+      axios.post("http://localhost:3001/clients", values).then((res) => {
+        console.log(res);
+      });
     },
   });
   console.log(formik.errors);

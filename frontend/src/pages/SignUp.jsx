@@ -34,16 +34,36 @@ const SignUp = () => {
           className="flex flex-col "
           onSubmit={formik.handleSubmit}
         >
-          <label htmlFor="email">Email</label>
+          <label
+            htmlFor="email"
+            className={`text-gray-900 block pb-2 ${
+              formik.touched.email && formik.errors.email ? "text-red-400" : ""
+            }`}
+          >
+            {formik.touched.email && formik.errors.email
+              ? formik.errors.email
+              : "Email:"}
+          </label>
           <input
             type="email"
             name="email"
             id="email"
-            className="ml-2 border border-gray-400 rounded"
+            className="ml-2 border border-gray-400 rounded "
             onChange={formik.handleChange}
             value={formik.values.email}
           />
-          <label htmlFor="password">Password</label>
+          <label
+            htmlFor="password"
+            className={`text-gray-900 block pb-2 ${
+              formik.touched.password && formik.errors.password
+                ? "text-red-400"
+                : ""
+            }`}
+          >
+            {formik.touched.password && formik.errors.password
+              ? formik.errors.password
+              : "Password:"}
+          </label>
           <input
             type="password"
             name="password"
@@ -52,7 +72,16 @@ const SignUp = () => {
             onChange={formik.handleChange}
             value={formik.values.password}
           />
-          <label htmlFor="name">Name</label>
+          <label
+            htmlFor="name"
+            className={`text-gray-900 block pb-2 ${
+              formik.touched.name && formik.errors.name ? "text-red-400" : ""
+            }`}
+          >
+            {formik.touched.name && formik.errors.name
+              ? formik.errors.name
+              : "Name:"}
+          </label>
           <input
             type="text"
             name="name"

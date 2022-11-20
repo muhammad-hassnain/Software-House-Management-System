@@ -53,7 +53,7 @@ const createTablePromised = promisify(createTable)
     Here you will be writing your create table queries and storing them in a const variable.
 
 */
-const queries = ["CREATE TABLE IF NOT EXISTS soft_management.account_info (email_address varchar(200) PRIMARY KEY, password varchar(200))",];
+const queries = ["CREATE TABLE IF NOT EXISTS soft_management.account_info (email_address varchar(200) PRIMARY KEY, password varchar(200))"];
 
 
 

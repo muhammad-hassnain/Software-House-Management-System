@@ -47,37 +47,17 @@ class CreateProject extends React.Component {
         );
     }
     
-    createProject2(e) {
-        e.preventDefault();
-        let request = {
-            form_name: document.getElementById('form_name').value,
-            form_description: document.getElementById('form_description').value,
-            assigned_to: document.getElementById('assigned_to').value,
-            date_start: document.getElementById('date_start').value,
-            date_end: document.getElementById('date_end').value,
-            revenue: document.getElementById('revenue').value,
-            client_id: document.getElementById('client_id').value,
-            // status: document.getElementById('status').value
-        }
-        axios.post('http://localhost:8080/createProject', request)
-        .then(resp => {
-            alert(JSON.stringify(resp.data, null,2));
-        })
-        .catch( err => {
-            console.log(err);
-        })
-    }
     
     getCurrentDate(separator=''){
-
+        
         let newDate = new Date()
         let date = newDate.getDate();
         let month = newDate.getMonth() + 1;
         let year = newDate.getFullYear();
         
         return `${year}${separator}${month<10?`0${month}`:`${month}`}${separator}${date}`
-        }
-
+    }
+    
     validate(e) {
         e.preventDefault();
         // alert("here");
@@ -113,7 +93,28 @@ class CreateProject extends React.Component {
             this.createProject2(e);
         }
     }
-
+    
+    createProject2(e) {
+        e.preventDefault();
+        let request = {
+            form_name: document.getElementById('form_name').value,
+            form_description: document.getElementById('form_description').value,
+            assigned_to: document.getElementById('assigned_to').value,
+            date_start: document.getElementById('date_start').value,
+            date_end: document.getElementById('date_end').value,
+            revenue: document.getElementById('revenue').value,
+            client_id: document.getElementById('client_id').value,
+            // status: document.getElementById('status').value
+        }
+        console.log(request)
+        axios.post('http://localhost:8080/createProject', request)
+        .then(resp => {
+            alert(JSON.stringify(resp.data, null,2));
+        })
+        .catch( err => {
+            console.log(err);
+        })
+    }
 }
 
 export default CreateProject;

@@ -20,6 +20,12 @@ router.get('/createProject', function(req, res, next) {
   // res.send("Welcome to backend");
 });
 
+router.get('/login', function(req, res, next) {
+  console.log(req)
+  console.log(res)
+  res.send("Welcome to backend");
+});
+
 router.post('/login', function(req, res) {
   // console.log("herer " , req.body)
   const {email, password} = req.body;

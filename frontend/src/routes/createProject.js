@@ -7,7 +7,7 @@ class CreateProject extends React.Component {
         super(props);
         this.state = {
             form_name: '',
-            form_description: '',
+            // form_description: '',
             assigned_to: '',
             date_start: '',
             date_end: '',
@@ -29,8 +29,8 @@ class CreateProject extends React.Component {
                 <form onSubmit={(e) => this.validate(e)}>
                     <label> Project Name: </label><br/>
                     <input type="text" id='form_name'></input><br/>
-                    <label> Project Description: </label><br/>
-                    <input type="text" id='form_description'></input><br/>
+                    {/* <label> Project Description: </label><br/>
+                    <input type="text" id='form_description'></input><br/> */}
                     <label> Assigned to: </label><br/>
                     <input type="text" id='assigned_to'></input><br/>
                     <label> Start Time : </label><br/>
@@ -62,7 +62,7 @@ class CreateProject extends React.Component {
         e.preventDefault();
         // alert("here");
         let form_name = document.getElementById('form_name').value;
-        let form_description = document.getElementById('form_description').value;
+        // let form_description = document.getElementById('form_description').value;
         let assigned_to = document.getElementById('assigned_to').value;
         let date_start = document.getElementById('date_start').value;
         let date_end = document.getElementById('date_end').value;
@@ -72,7 +72,8 @@ class CreateProject extends React.Component {
         // console.log(date_start , date_end)
         const current_date = this.getCurrentDate('-')
         // console.log(current_date)
-        if (form_name === '' || form_description === '' || assigned_to === '' || date_start === '' || date_end === '' || revenue === '' || client_id === '' ) {
+        // form_description === '' ||
+        if (form_name === '' ||  assigned_to === '' || date_start === '' || date_end === '' || revenue === '' || client_id === '' ) {
             // console.log("Please fill all the fields");
             alert("Please fill all the fields");
         }
@@ -98,7 +99,7 @@ class CreateProject extends React.Component {
         e.preventDefault();
         let request = {
             form_name: document.getElementById('form_name').value,
-            form_description: document.getElementById('form_description').value,
+            // form_description: document.getElementById('form_description').value,
             assigned_to: document.getElementById('assigned_to').value,
             date_start: document.getElementById('date_start').value,
             date_end: document.getElementById('date_end').value,
@@ -106,8 +107,8 @@ class CreateProject extends React.Component {
             client_id: document.getElementById('client_id').value,
             // status: document.getElementById('status').value
         }
-        console.log(request)
-        axios.post('http://localhost:8080/createProject', request)
+        // console.log(request)
+        axios.post('http://localhost:8080/createproject', request)
         .then(resp => {
             alert(JSON.stringify(resp.data, null,2));
         })

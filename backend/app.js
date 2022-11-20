@@ -1,13 +1,16 @@
 const express = require('express')
+// var cookieParser = require('cookie-parser');
+
 const cors = require('cors')
 const app = express()
-const port = 8080 
+// const port = 8080 
 const createProject = require('./routes/createProject')
 
-// app.use(express.json())
+app.use(express.json())
 app.use(cors())
+require('dotenv').config();
 
-app.listen(port, () => console.log("Listening on Port:", port))
+app.listen(process.env.port, () => console.log("Listening on Port:", process.env.port))
 
 //DB Connection-----------
 // dbConnect = async () => {
@@ -18,30 +21,24 @@ app.listen(port, () => console.log("Listening on Port:", port))
 //         console.log("DB connected")
 //     }
 //     catch(err) {
-//         console.log(`${err} Ocurred while connecting to DB`)
+//         console.log(`${err} Occurred while connecting to DB`)
 //     }
 // }
 
 // dbConnect()
 //-------------------------
 
-app.get('/', (req, res) => {
-  console.log("heello world")
+app.get('/', function(req, res)  {
+  console.log("hello world")
   // console.log("req", req); 
   res.send("Hello World")
 })
 
 
-app.use('/createProject' , createProject)
-// app.use('/auth', auth)
-// app.use("/register_donor", registerAsDonor)
-// app.use("/my_requests", myRequests)
-// app.use('/status',status)
-// app.use("/donor_auth",donorAuth)
-// app.use("/active_request",activeRequest)
-//app.use("/submit_request", submitRequestRoutes)
-// 404 page
-app.use((req, res) => {
-    console.log("req" , req)
-    res.status(404).render('404', { title: '404' });
-  });
+app.use('/createproject' , createProject)
+// app.use( function(req, res)  {
+//     console.log("req" , req)
+//     res.status(404).render('404', { title: '404' });
+//   });
+
+module.exports = app;

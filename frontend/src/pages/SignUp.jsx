@@ -39,6 +39,24 @@ const SignUp = () => {
           onSubmit={formik.handleSubmit}
         >
           <label
+            htmlFor="name"
+            className={`text-gray-900 block pb-2 ${
+              formik.touched.name && formik.errors.name ? "text-red-400" : ""
+            }`}
+          >
+            {formik.touched.name && formik.errors.name
+              ? formik.errors.name
+              : "Name:"}
+          </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            className="ml-2 border border-gray-400 rounded"
+            onChange={formik.handleChange}
+            value={formik.values.name}
+          />
+          <label
             htmlFor="email"
             className={`text-gray-900 block pb-2 ${
               formik.touched.email && formik.errors.email ? "text-red-400" : ""
@@ -76,24 +94,7 @@ const SignUp = () => {
             onChange={formik.handleChange}
             value={formik.values.password}
           />
-          <label
-            htmlFor="name"
-            className={`text-gray-900 block pb-2 ${
-              formik.touched.name && formik.errors.name ? "text-red-400" : ""
-            }`}
-          >
-            {formik.touched.name && formik.errors.name
-              ? formik.errors.name
-              : "Name:"}
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            className="ml-2 border border-gray-400 rounded"
-            onChange={formik.handleChange}
-            value={formik.values.name}
-          />
+
           <button
             type="submit"
             className="bg-blue-500 text-white rounded mt-4 mx-auto p-2 sm:w-2/4 "

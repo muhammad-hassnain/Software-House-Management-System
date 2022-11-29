@@ -5,6 +5,7 @@ const cors = require('cors')
 const app = express()
 // const port = 8080 
 const createProject = require('./routes/createProject')
+const createClientReview = require('./routes/createClientReview')
 
 app.use(express.json())
 app.use(cors())
@@ -40,5 +41,5 @@ app.use('/createproject' , createProject)
 //     console.log("req" , req)
 //     res.status(404).render('404', { title: '404' });
 //   });
-
+app.use('/createclientreview', createClientReview)
 module.exports = app;

@@ -23,8 +23,8 @@ router.post("/" , function (req,res)  {
 
 
     // (1, 'a' , 'desc', '2', '12-03-2020', '15-03-2020', 23, 32, 'in-progress')
-    db.query("INSERT IGNORE INTO soft_management.projects (form_name, start_time, end_time, revenue, client_id, assigned_to_pm) VALUES ?", 
-    [req.body.form_name, req.body.date_start,req.body.date_end, req.body.revenue, req.body.client_id, req.body.assigned_to], function (err, result, fields) {
+    db.query( `INSERT IGNORE INTO projects (name, start_time, end_time, revenue, client_id, assigned_to_pm , status) VALUES ('${req.body.form_name}', '${req.body.date_start}', '${req.body.date_end}', ${req.body.revenue}, ${req.body.client_id}, '${req.body.assigned_to}' , 'in progress')`, function (err, result, fields) {
+    
       
         // if any error while executing above query, throw error
       if (err) throw err;

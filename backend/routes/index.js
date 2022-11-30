@@ -86,9 +86,15 @@ router.get('/projects', function(req, res) {
       response.data = rows;
       console.log(rows);
       db.query(`SELECT * FROM tasks WHERE project_id=${rows[0].id}`, (err_2, rows_2) => {
-        res.send({
-          project: rows,
-          tasks: rows_2
+        db.query(`SELECT * FROM assigned_swes JOIN employees ON employees.id=assigned_swes.employee_id HAVING assigned_swes.project_id=${rows[0].id};`, (err_3, rows_3) => {
+          db.query(`SELECT * FROM employees WHERE designation='Software Engineer'`, (err_4, rows_4) => {
+            res.send({
+              project: rows,
+              tasks: rows_2,
+              assigned_swes: rows_3,
+              unassigned_swes: rows_4
+            })
+          })
         })
       })
     }
@@ -122,6 +128,17 @@ router.post('/marktaskcomplete', async function(req, res) {
 
   db.query(`SELECT * FROM tasks WHERE project_id=${task.project_id}`, (err_2, rows_2) => {
     res.send({tasks: rows_2})      
+  })
+})
+
+router.post('/assignSWE', async function(req, res) {
+  const project = req.body.state.project[0];
+  const toAssignID = req.body.state.toAssignSWE;
+  
+  db.query(`INSERT INTO assigned_swes (project_id, employee_id) VALUES (${project.id}, ${toAssignID})`);
+
+  db.query(`SELECT * FROM assigned_swes JOIN employees ON employees.id=assigned_swes.employee_id HAVING assigned_swes.project_id=${project.id};`, (err, rows) => {
+    res.send({ assigned_swes: rows})      
   })
 })
 

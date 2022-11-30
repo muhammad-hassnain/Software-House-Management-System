@@ -142,4 +142,11 @@ router.post('/assignSWE', async function(req, res) {
   })
 })
 
+router.post('/markprojectcomplete', function(req, res) {
+  console.log("HIT");
+  const project_id = req.body.project.id
+  db.query(`UPDATE projects SET status='Completed' WHERE id=${project_id};`)
+  res.
+})
+
 module.exports = router;

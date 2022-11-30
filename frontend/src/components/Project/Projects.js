@@ -41,6 +41,21 @@ class Projects extends React.Component {
 		})
 	}
 
+	markProjectAsComplete = () => {
+		const state = this.state
+		fetch(BACKEND_LINK+'/markprojectcomplete', {
+			method: 'post',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify({ state })
+		})
+		.then(response => response.json())
+		.then(response => {
+			if (response) {
+				this.setState({ tasks: response.tasks})
+			}
+		})
+	}
+
 	onAssignChange = (event) => {
 		this.setState({ toAssignSWE: event.target.value })
 		console.log(this.state);
@@ -119,7 +134,7 @@ class Projects extends React.Component {
 							)
 						}
 					})}
-					
+				<a className="markAsComplete" onClick={() => { this.markProjectAsComplete() }}>Mark Project as complete</a>
 				</div>
 			)	
 		} else {

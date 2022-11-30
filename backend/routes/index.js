@@ -125,7 +125,7 @@ router.post('/marktaskcomplete', async function(req, res) {
 
   // const status = await markTaskAsComplete(task)
   db.query(`UPDATE tasks SET status='Complete' WHERE id=${task.id}`);
-
+  
   db.query(`SELECT * FROM tasks WHERE project_id=${task.project_id}`, (err_2, rows_2) => {
     res.send({tasks: rows_2})      
   })

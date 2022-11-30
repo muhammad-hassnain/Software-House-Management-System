@@ -1,6 +1,7 @@
 var express = require('express');
 const db = require('../database');
 var router = express.Router();
+const bodyParser = require('body-parser')
 var users = [
   {
     email: 'ayesha@gmail.com', password: 'password' 
@@ -66,6 +67,61 @@ router.post('/updatepassword', function(req, res) {
     }
 
     res.send(JSON.stringify(response));
+  })
+})
+
+router.get('/projects', function(req, res) {
+  const response = {
+    success: false,
+    errormessage: '',
+    userId: 1,
+    data: '',
+  };
+
+  db.query("SELECT * FROM projects;", (err, rows) => {
+    if (rows.length == 0) {
+      // response.errormessage += 'Project does not exist';
+      res.send(false);
+    } else {
+      response.data = rows;
+      console.log(rows);
+      db.query(`SELECT * FROM tasks WHERE project_id=${rows[0].id}`, (err_2, rows_2) => {
+        res.send({
+          project: rows,
+          tasks: rows_2
+        })
+      })
+    }
+  })
+
+  if (response.errormessage == '')
+  {
+    response.success = true;
+  }
+
+  // res.send(JSON.stringify(response));
+})
+
+function markTaskAsComplete(task) {
+  return new Promise((resolve, reject)=>{
+    db.query(`UPDATE tasks SET status='Complete' WHERE id=${task.id}`), (err, rows) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
+    }
+  })
+}
+
+router.post('/marktaskcomplete', async function(req, res) {
+  const task = req.body.task;
+
+  // const status = await markTaskAsComplete(task)
+  db.query(`UPDATE tasks SET status='Complete' WHERE id=${task.id}`);
+
+  db.query(`SELECT * FROM tasks WHERE project_id=${task.project_id}`, (err_2, rows_2) => {
+    res.send({tasks: rows_2})      
   })
 })
 

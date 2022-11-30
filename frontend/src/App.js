@@ -8,6 +8,7 @@ import UpdatePassword from './components/UpdatePassword/UpdatePassword.js'
 import {
     BrowserRouter as Router,
 } from 'react-router-dom';
+import Projects from './components/Project/Projects.js'
 import BACKEND_LINK from './env.js';
 
 // function App() {
@@ -79,6 +80,7 @@ class App extends Component {
           <Routes>
                  // employee is signed in reroute to dashboard
                  <Route exact path='/updatepassword' element={< UpdatePassword employee={this.state.employee}/>}></Route>
+                 <Route path="/projects" element={<Projects />} />
           </Routes>
        </Router>
     )

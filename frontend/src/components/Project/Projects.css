@@ -1,0 +1,15 @@
+.card {
+	color: red;
+}
+
+.markAsComplete {
+	cursor: pointer;
+	background: blue;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px;
+	text-decoration: none;
+	font-family: Montserrat;
+	color: white;
+	
+}

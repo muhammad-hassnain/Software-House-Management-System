@@ -1,0 +1,82 @@
+import React from 'react';
+import BACKEND_LINK from '../../env.js';
+import './Projects.css';
+
+class Projects extends React.Component {
+	constructor(props) {
+		super(props)
+
+		this.state = {
+			project: undefined,
+			userId: 1
+		}
+	}
+
+	componentWillMount() {
+		fetch(BACKEND_LINK+'/projects', {
+				method: 'get',
+				headers: {'Content-Type': 'application/json'},
+			})
+			.then(response => response.json())
+			.then(response => {
+				if (response)
+				{
+					this.setState({ project: response.project, tasks: response.tasks})
+				}
+			})
+	}
+
+	markAsComplete = (task) => {
+		fetch(BACKEND_LINK+'/marktaskcomplete', {
+			method: 'post',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify({ task: task })
+		})
+		.then(response => response.json())
+		.then(response => {
+			if (response) {
+				this.setState({ tasks: response.tasks})
+			}
+		})
+	}
+
+	render() {
+		if (this.state.project)
+		{
+			const project = this.state.project[0]
+			const tasks = this.state.tasks
+			const userId = this.state.userId
+			const markAsComplete = this.markAsComplete
+
+			return (
+				<div>
+					<h1>Project</h1>
+					<h3>Tasks</h3>
+					{tasks.map(function(task) {
+						console.log(userId)
+						if (userId == parseInt(task.assigned_to))
+						{
+							return (
+								<div key={task.id} className="task">
+									<h4>{task.id}. {task.task}</h4>
+									<h6>Due: {task.due_date}</h6>
+									<h6>{task.status}</h6>
+									<a className="markAsComplete" onClick={() => { markAsComplete(task) }}>Mark as complete</a>
+								</div>
+							)
+						}
+					})}
+				</div>
+			)	
+		} else {
+			return (
+				<div>
+					<h1>Project</h1>
+				</div>
+		)
+		}
+		
+	}
+}
+
+export default Projects;

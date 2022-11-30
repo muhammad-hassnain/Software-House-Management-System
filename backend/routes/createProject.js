@@ -4,32 +4,8 @@ var router = express.Router();
 
 router.post("/" , function (req,res)  {
     console.log("body is: ", req.body)
-  
-  
-    // const response = {
-    //   success: false,
-    //   errormessage: ''
-    // };
-//     db.query("INSERT IGNORE INTO projects VALUES;", [req.body.form_name, req.body.form_description, req.bodyassigned_to, req.bodydate_start,
-//       req.body.date_end, req.body.revenue, req.body.client_id], (err) => {
-  
-//     if (err == '')
-//     {
-//       response.success = true;
-//     }
-  
-//     res.send(JSON.stringify(response));
-//   })
-
-
-    // (1, 'a' , 'desc', '2', '12-03-2020', '15-03-2020', 23, 32, 'in-progress')
-    db.query( `INSERT IGNORE INTO projects (name, start_time, end_time, revenue, client_id, assigned_to_pm , status) VALUES ('${req.body.form_name}', '${req.body.date_start}', '${req.body.date_end}', ${req.body.revenue}, ${req.body.client_id}, '${req.body.assigned_to}' , 'in progress')`, function (err, result, fields) {
-    
-      
-        // if any error while executing above query, throw error
+    db.query( `INSERT IGNORE INTO projects (name, start_time, end_time, revenue, client_id, assigned_to_pm , status) VALUES ('${req.body.form_name}', '${req.body.date_start}', '${req.body.date_end}', ${req.body.revenue}, ${req.body.client_id}, '${req.body.assigned_to}' , 'in progress')`, function (err, result, fields) {      
       if (err) throw err;
-      // if there is no error, you have the result
-    //   res.send(JSON.stringify(response));
       console.log(result);
     });
 })

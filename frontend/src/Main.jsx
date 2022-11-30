@@ -12,11 +12,8 @@ const Main = () => {
         <Route path="/" element={<DoLogin />} />
         <Route path="/createProject" element={<CreateProject />} />
         <Route path="/createClientReview" element={<CreateClientReview/>} />
-<<<<<<< Updated upstream
         <Route path="/viewProject" element={<ViewProject/>} />
-=======
         <Route path="/createClientProfile" element={<CreateClientProfile/>} />
->>>>>>> Stashed changes
         </Routes>
     );
 };

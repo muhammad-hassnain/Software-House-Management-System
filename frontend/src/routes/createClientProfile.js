@@ -37,8 +37,7 @@ class CreateClientProfile extends React.Component {
     CreateClientProfile2(e) {
         e.preventDefault();
         let request = {
-            client_name : document.getElementById('client_name').value,
-           
+            client_name : document.getElementById('client_name').value,  
         }
         // console.log(request)
         axios.post('http://localhost:8080/createclientprofile', request)
@@ -50,5 +49,4 @@ class CreateClientProfile extends React.Component {
         })
     }
 }
-
 export default CreateClientProfile;

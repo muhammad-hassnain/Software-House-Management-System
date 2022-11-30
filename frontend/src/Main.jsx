@@ -3,6 +3,7 @@ import DoLogin from './routes/login';
 import CreateProject from './routes/createProject';
 import CreateClientReview from './routes/createClientReview';
 import React from 'react';
+import ViewProject from './routes/ViewProject';
 
 const Main = () => {
     return (
@@ -10,6 +11,7 @@ const Main = () => {
         <Route path="/" element={<DoLogin />} />
         <Route path="/createProject" element={<CreateProject />} />
         <Route path="/createClientReview" element={<CreateClientReview/>} />
+        <Route path="/viewProject" element={<ViewProject/>} />
         </Routes>
     );
 };

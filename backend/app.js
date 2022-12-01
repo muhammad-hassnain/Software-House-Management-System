@@ -14,7 +14,7 @@ const createProject = require('./routes/createProject')
 const createClientReview = require('./routes/createClientReview')
 const CreateClientProfile = require('./routes/createClientProfile')
 const viewProject = require('./routes/viewProject')
-
+const viewClientProfile = require('./routes/viewClientProfile')
 
 app.use(cors())
 app.use(express.json())
@@ -35,4 +35,5 @@ app.use('/createproject' , createProject)
 app.use('/createclientreview', createClientReview)
 app.use('/viewProject', viewProject)
 app.use('/createclientprofile', CreateClientProfile)
+app.use('/viewclientprofile', viewClientProfile)
 module.exports = app;

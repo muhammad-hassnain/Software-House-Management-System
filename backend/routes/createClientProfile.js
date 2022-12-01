@@ -1,7 +1,7 @@
 var express = require('express');
 const db = require('../database');
 var router = express.Router();
-console.log("here")
+
 router.post("/" , function (req,res)  {
     console.log("body is: ", req.body)
   

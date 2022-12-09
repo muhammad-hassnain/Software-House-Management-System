@@ -34,6 +34,12 @@ app.get("/", (req, res) => {
   res.send("hello world");
 });
 
+const createProject = require('./routes/createProject');
+const createClientReview = require('./routes/createClientReview');
+const CreateClientProfile = require('./routes/createClientProfile');
+const viewProject = require('./routes/viewProject');
+const viewClientProfile = require('./routes/viewClientProfile'); 
+
 const loginEmployeeRouter = require("./routes/LoginEmployeeRoute");
 app.use("/login", loginEmployeeRouter);
 
@@ -61,3 +67,15 @@ app.use("/deleteEmployee", deleteEmployee);
 //update Password
 const updatePassword = require("./routes/updatePassword");
 app.use("/updatepassword", updatePassword);
+<<<<<<< HEAD
+=======
+
+
+app.use('/createproject' , createProject);
+app.use('/createclientreview', createClientReview);
+app.use('/viewProject', viewProject);
+app.use('/createclientprofile', CreateClientProfile);
+app.use('/viewclientprofile', viewClientProfile);
+
+module.exports = app;
+>>>>>>> 7dcf6c36 (newBranch created.)

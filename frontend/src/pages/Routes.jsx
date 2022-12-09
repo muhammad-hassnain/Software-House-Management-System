@@ -41,6 +41,7 @@ import CreateProject from "./createProject";
 import ViewProject from "./viewProject";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> bd79b271 (merged createProject and ViewProject)
 =======
 =======
@@ -75,6 +76,9 @@ import SEHomePage from "./SEHomePage";
 import ViewProjectSE from "./viewProject_SE"
 >>>>>>> 60c47dea (View Project SE + SE Home Page Created)
 >>>>>>> 3376e234 (resolved)
+=======
+>>>>>>> bd79b271 (merged createProject and ViewProject)
+>>>>>>> e49bce9f (resolved)
 
 const routes = [
   {

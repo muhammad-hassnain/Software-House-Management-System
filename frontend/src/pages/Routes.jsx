@@ -19,6 +19,7 @@ import SEHomePage from "./HomePages/SEHomePage";
 import PMHomePage from "./HomePages/PMHomePage";
 =======
 import UpdatePassword from '../components/UpdatePassword';
+<<<<<<< HEAD
 import CreateProject from './createProject';
 import CreateClientReview from './createClientReview';
 import CreateClientProfile from './createClientProfile'; 
@@ -32,6 +33,10 @@ import PMHomepage  from "./PMHomePage";
 import SEHomePage from "./SEHomePage"; 
 import ViewProjectSE from "./viewProject_SE"
 >>>>>>> 60c47dea (View Project SE + SE Home Page Created)
+=======
+import CreateProject from "./createProject";
+import ViewProject from "./viewProject";
+>>>>>>> bd79b271 (merged createProject and ViewProject)
 
 const routes = [
   {
@@ -63,6 +68,17 @@ const routes = [
     element: <UpdatePassword />,
 
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/createProject",
+    element : <CreateProject/>,
+    errorElement : <ErrorPage/>
+  },
+  {
+    path : "/viewProject",
+    element: <ViewProject/>,
+    errorElement : <ErrorPage/>
+
   },
   {
     path: "hrHome",

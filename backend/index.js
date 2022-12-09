@@ -68,6 +68,7 @@ app.use("/deleteEmployee", deleteEmployee);
 const updatePassword = require("./routes/updatePassword");
 app.use("/updatepassword", updatePassword);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
@@ -82,3 +83,11 @@ app.use( '/updateProject' ,updateProject)
 
 module.exports = app;
 >>>>>>> 7dcf6c36 (newBranch created.)
+=======
+
+const createProject = require("./routes/createProject");
+app.use('/createproject' , createProject)
+
+const viewProject = require("./routes/viewProject");
+app.use('/viewProject', viewProject)
+>>>>>>> bd79b271 (merged createProject and ViewProject)

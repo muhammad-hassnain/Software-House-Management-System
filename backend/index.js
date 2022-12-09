@@ -111,7 +111,6 @@ module.exports = app;
 =======
 >>>>>>> 3376e234 (resolved)
 
-<<<<<<< HEAD
 app.use("/createproject", createProject);
 app.use("/createclientreview", createClientReview);
 app.use("/viewProject", viewProject);
@@ -120,8 +119,14 @@ app.use("/viewclientprofile", viewClientProfile);
 
 const updateProject = require("./routes/updateProject");
 app.use("/updateProject", updateProject);
+const updateProject = require("./routes/updateProject");
+app.use("/updateProject", updateProject);
+
+const updateProject = require("./routes/updateProject");
+app.use("/updateProject", updateProject);
 
 module.exports = app;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 26753f95 (resolving conflicts)
@@ -130,10 +135,21 @@ module.exports = app;
 >>>>>>> 3376e234 (resolved)
 =======
 =======
+=======
+
+>>>>>>> e8a7feb1 (resolved)
 const createProject = require("./routes/createProject");
-app.use('/createproject' , createProject)
+app.use("/createproject", createProject);
 
 const viewProject = require("./routes/viewProject");
+<<<<<<< HEAD
 app.use('/viewProject', viewProject)
 >>>>>>> bd79b271 (merged createProject and ViewProject)
 >>>>>>> e49bce9f (resolved)
+=======
+
+app.use("/viewProject", viewProject);
+
+app.use("/viewProject", viewProject);
+module.exports = app;
+>>>>>>> e8a7feb1 (resolved)

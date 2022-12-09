@@ -13,6 +13,24 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CreateEmployeeReview from "./CreateEmployeeReview";
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import UpdatePassword from '../components/UpdatePassword';
+import CreateProject from './createProject';
+import CreateClientReview from './createClientReview';
+import CreateClientProfile from './createClientProfile'; 
+import ViewProject from './ViewProject';
+import ViewClientProfile from './ViewClientProfile';
+import PMHomepage  from "./PMHomePage";
+import SEHomePage from "./SEHomePage"; 
+import ViewProjectSE from "./viewProject_SE"
+import CreateProject from "./createProject";
+import ViewProject from "./viewProject";
+=======
+=======
+>>>>>>> 32bc752d (resolved)
+>>>>>>> e8a7feb1 (resolved)
+<<<<<<< HEAD
 
 import UpdatePassword from "../components/UpdatePassword";
 import DeletePopUp from "../components/DeletePopUp";
@@ -44,6 +62,7 @@ import ViewProject from "./viewProject";
 <<<<<<< HEAD
 >>>>>>> bd79b271 (merged createProject and ViewProject)
 =======
+<<<<<<< HEAD
 =======
 =======
 <<<<<<< HEAD
@@ -79,6 +98,22 @@ import ViewProjectSE from "./viewProject_SE"
 =======
 >>>>>>> bd79b271 (merged createProject and ViewProject)
 >>>>>>> e49bce9f (resolved)
+=======
+import UpdatePassword from "../components/UpdatePassword";
+import CreateProject from "./createProject";
+import CreateClientReview from "./createClientReview";
+import CreateClientProfile from "./createClientProfile";
+import ViewProject from "./ViewProject";
+import ViewClientProfile from "./ViewClientProfile";
+import PMHomepage from "./PMHomePage";
+import SEHomePage from "./SEHomePage";
+import ViewProjectSE from "./viewProject_SE";
+
+import DeletePopUp from "../components/DeletePopUp";
+>>>>>>> 251dd768 (resolving conflicts)
+
+import PMHomePage from "./HomePages/PMHomePage";
+>>>>>>> e8a7feb1 (resolved)
 
 const routes = [
   {
@@ -113,14 +148,13 @@ const routes = [
   },
   {
     path: "/createProject",
-    element : <CreateProject/>,
-    errorElement : <ErrorPage/>
+    element: <CreateProject />,
+    errorElement: <ErrorPage />,
   },
   {
-    path : "/viewProject",
-    element: <ViewProject/>,
-    errorElement : <ErrorPage/>
-
+    path: "/viewProject",
+    element: <ViewProject />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "hrHome",
@@ -280,23 +314,23 @@ const routes = [
       },
       {
         path: "viewProject",
-        element: <ViewProject/>,
+        element: <ViewProject />,
         errorElement: <ErrorPage />,
       },
       {
         path: "view-client-profile",
-        element: <ViewClientProfile/>,
+        element: <ViewClientProfile />,
         errorElement: <ErrorPage />,
       },
       {
         path: "create-client-review",
-        element: <CreateClientReview/>,
+        element: <CreateClientReview />,
         errorElement: <ErrorPage />,
       },
       {
         path: "updatepassword",
         element: <UpdatePassword />,
-        errorElement: <ErrorPage />
+        errorElement: <ErrorPage />,
       },
     ],
   },
@@ -310,17 +344,43 @@ const routes = [
         element: <ViewProjectSE />,
         errorElement: <ErrorPage />,
       },
-      
+
       {
         path: "updatepassword",
         element: <UpdatePassword />,
-        errorElement: <ErrorPage />
+        errorElement: <ErrorPage />,
       },
     ],
   },
 
+<<<<<<< HEAD
 >>>>>>> 7dcf6c36 (newBranch created.)
+<<<<<<< HEAD
 >>>>>>> c362e727 (resolved)
+=======
+=======
+  {
+    path: "/deletepopup",
+    element: <DeletePopUp />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/updatePassword",
+    element: <UpdatePassword />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/swe",
+    element: <SEHomePage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/pm",
+    element: <PMHomePage />,
+    errorElement: <ErrorPage />,
+  },
+>>>>>>> 251dd768 (resolving conflicts)
+>>>>>>> e8a7feb1 (resolved)
 ];
 const router = createBrowserRouter(routes);
 

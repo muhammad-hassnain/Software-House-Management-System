@@ -36,7 +36,14 @@ import ViewProjectSE from "./viewProject_SE"
 =======
 import CreateProject from "./createProject";
 import ViewProject from "./viewProject";
+<<<<<<< HEAD
 >>>>>>> bd79b271 (merged createProject and ViewProject)
+=======
+import UpdatePassword from "../components/UpdatePassword";
+import DeletePopUp from "../components/DeletePopUp";
+import SEHomePage from "./HomePages/SEHomePage";
+import PMHomePage from "./HomePages/PMHomePage";
+>>>>>>> c6359438 (resolved)
 
 const routes = [
   {
@@ -189,7 +196,29 @@ const routes = [
     ],
   },
 
+<<<<<<< HEAD
 >>>>>>> 7dcf6c36 (newBranch created.)
+=======
+   { path: "/deletepopup",
+    element: <DeletePopUp />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/updatePassword",
+    element: <UpdatePassword />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/swe",
+    element: <SEHomePage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/pm",
+    element: <PMHomePage />,
+    errorElement: <ErrorPage />,
+  },
+>>>>>>> c6359438 (resolved)
 ];
 const router = createBrowserRouter(routes);
 

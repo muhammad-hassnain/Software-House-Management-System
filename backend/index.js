@@ -69,7 +69,10 @@ const updatePassword = require("./routes/updatePassword");
 app.use("/updatepassword", updatePassword);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> c6359438 (resolved)
 
 
 app.use('/createproject' , createProject);
@@ -90,4 +93,11 @@ app.use('/createproject' , createProject)
 
 const viewProject = require("./routes/viewProject");
 app.use('/viewProject', viewProject)
+<<<<<<< HEAD
 >>>>>>> bd79b271 (merged createProject and ViewProject)
+=======
+module.exports = app;
+
+=======
+>>>>>>> 3bc423af (added routing for login)
+>>>>>>> c6359438 (resolved)

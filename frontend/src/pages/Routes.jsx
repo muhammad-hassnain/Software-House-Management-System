@@ -12,12 +12,15 @@ import ViewEmployee from "./ViewEmployee";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CreateEmployeeReview from "./CreateEmployeeReview";
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import UpdatePassword from "../components/UpdatePassword";
 import DeletePopUp from "../components/DeletePopUp";
 import SEHomePage from "./HomePages/SEHomePage";
 import PMHomePage from "./HomePages/PMHomePage";
 =======
+=======
+>>>>>>> c362e727 (resolved)
 import UpdatePassword from '../components/UpdatePassword';
 <<<<<<< HEAD
 import CreateProject from './createProject';
@@ -37,13 +40,33 @@ import ViewProjectSE from "./viewProject_SE"
 import CreateProject from "./createProject";
 import ViewProject from "./viewProject";
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> bd79b271 (merged createProject and ViewProject)
 =======
+=======
+=======
+<<<<<<< HEAD
+
+>>>>>>> 26753f95 (resolving conflicts)
+>>>>>>> c362e727 (resolved)
 import UpdatePassword from "../components/UpdatePassword";
 import DeletePopUp from "../components/DeletePopUp";
 import SEHomePage from "./HomePages/SEHomePage";
 import PMHomePage from "./HomePages/PMHomePage";
+<<<<<<< HEAD
 >>>>>>> c6359438 (resolved)
+=======
+=======
+import UpdatePassword from '../components/UpdatePassword';
+import CreateProject from './createProject';
+import CreateClientReview from './createClientReview';
+import CreateClientProfile from './createClientProfile'; 
+import ViewProject from './ViewProject';
+import ViewClientProfile from './ViewClientProfile';
+import PMHomepage  from "./PMHomePage";
+
+>>>>>>> 7dcf6c36 (newBranch created.)
+>>>>>>> c362e727 (resolved)
 
 const routes = [
   {
@@ -121,6 +144,7 @@ const routes = [
   },
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     path: "/deletepopup",
     element: <DeletePopUp />,
     errorElement: <ErrorPage />,
@@ -141,6 +165,8 @@ const routes = [
     errorElement: <ErrorPage />,
   },
 =======
+=======
+>>>>>>> c362e727 (resolved)
     path: "pmHome",
     element: <PMHomepage />,
     errorElement: <ErrorPage />,
@@ -200,6 +226,10 @@ const routes = [
 >>>>>>> 7dcf6c36 (newBranch created.)
 =======
    { path: "/deletepopup",
+=======
+<<<<<<< HEAD
+    path: "/deletepopup",
+>>>>>>> 26753f95 (resolving conflicts)
     element: <DeletePopUp />,
     errorElement: <ErrorPage />,
   },
@@ -218,7 +248,50 @@ const routes = [
     element: <PMHomePage />,
     errorElement: <ErrorPage />,
   },
+<<<<<<< HEAD
 >>>>>>> c6359438 (resolved)
+=======
+=======
+    path: "pmHome",
+    element: <PMHomepage />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "createProject",
+        element: <CreateProject />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "createClientProfile",
+        element: <CreateClientProfile />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "viewProject",
+        element: <ViewProject/>,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "view-client-profile",
+        element: <ViewClientProfile/>,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "create-client-review",
+        element: <CreateClientReview/>,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/updatepassword",
+        element: <UpdatePassword />,
+        errorElement: <ErrorPage />
+      },
+    ],
+  },
+  
+
+>>>>>>> 7dcf6c36 (newBranch created.)
+>>>>>>> c362e727 (resolved)
 ];
 const router = createBrowserRouter(routes);
 

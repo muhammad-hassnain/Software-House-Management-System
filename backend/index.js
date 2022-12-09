@@ -34,11 +34,19 @@ app.get("/", (req, res) => {
   res.send("hello world");
 });
 
+<<<<<<< HEAD
 const createProject = require('./routes/createProject');
 const createClientReview = require('./routes/createClientReview');
 const CreateClientProfile = require('./routes/createClientProfile');
 const viewProject = require('./routes/viewProject');
 const viewClientProfile = require('./routes/viewClientProfile'); 
+=======
+const createProject = require("./routes/createProject");
+const createClientReview = require("./routes/createClientReview");
+const CreateClientProfile = require("./routes/createClientProfile");
+const viewProject = require("./routes/viewProject");
+const viewClientProfile = require("./routes/viewClientProfile");
+>>>>>>> 26753f95 (resolving conflicts)
 
 const loginEmployeeRouter = require("./routes/LoginEmployeeRoute");
 app.use("/login", loginEmployeeRouter);
@@ -70,9 +78,12 @@ app.use("/updatepassword", updatePassword);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> c6359438 (resolved)
+=======
+>>>>>>> c362e727 (resolved)
 
 
 app.use('/createproject' , createProject);
@@ -100,4 +111,17 @@ module.exports = app;
 
 =======
 >>>>>>> 3bc423af (added routing for login)
+<<<<<<< HEAD
 >>>>>>> c6359438 (resolved)
+=======
+=======
+
+app.use("/createproject", createProject);
+app.use("/createclientreview", createClientReview);
+app.use("/viewProject", viewProject);
+app.use("/createclientprofile", CreateClientProfile);
+app.use("/viewclientprofile", viewClientProfile);
+
+module.exports = app;
+>>>>>>> 26753f95 (resolving conflicts)
+>>>>>>> c362e727 (resolved)

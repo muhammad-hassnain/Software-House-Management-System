@@ -77,5 +77,8 @@ app.use('/viewProject', viewProject);
 app.use('/createclientprofile', CreateClientProfile);
 app.use('/viewclientprofile', viewClientProfile);
 
+const updateProject = require("./routes/updateProject")
+app.use( '/updateProject' ,updateProject)
+
 module.exports = app;
 >>>>>>> 7dcf6c36 (newBranch created.)

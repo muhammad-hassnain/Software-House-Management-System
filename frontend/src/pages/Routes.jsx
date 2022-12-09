@@ -25,8 +25,13 @@ import CreateClientProfile from './createClientProfile';
 import ViewProject from './ViewProject';
 import ViewClientProfile from './ViewClientProfile';
 import PMHomepage  from "./PMHomePage";
+<<<<<<< HEAD
 
 >>>>>>> 7dcf6c36 (newBranch created.)
+=======
+import SEHomePage from "./SEHomePage"; 
+import ViewProjectSE from "./viewProject_SE"
+>>>>>>> 60c47dea (View Project SE + SE Home Page Created)
 
 const routes = [
   {
@@ -143,13 +148,30 @@ const routes = [
         errorElement: <ErrorPage />,
       },
       {
-        path: "/updatepassword",
+        path: "updatepassword",
         element: <UpdatePassword />,
         errorElement: <ErrorPage />
       },
     ],
   },
-  
+  {
+    path: "seHome",
+    element: <SEHomePage />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "viewproject-se",
+        element: <ViewProjectSE />,
+        errorElement: <ErrorPage />,
+      },
+      
+      {
+        path: "updatepassword",
+        element: <UpdatePassword />,
+        errorElement: <ErrorPage />
+      },
+    ],
+  },
 
 >>>>>>> 7dcf6c36 (newBranch created.)
 ];

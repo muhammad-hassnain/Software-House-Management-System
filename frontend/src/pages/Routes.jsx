@@ -14,6 +14,8 @@ import CreateEmployeeReview from "./CreateEmployeeReview";
 
 import UpdatePassword from "../components/UpdatePassword";
 import DeletePopUp from "../components/DeletePopUp";
+import SEHomePage from "./HomePages/SEHomePage";
+import PMHomePage from "./HomePages/PMHomePage";
 
 const routes = [
   {
@@ -86,6 +88,16 @@ const routes = [
   {
     path: "/updatePassword",
     element: <UpdatePassword />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/swe",
+    element: <SEHomePage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/pm",
+    element: <PMHomePage />,
     errorElement: <ErrorPage />,
   },
 ];

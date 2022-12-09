@@ -54,7 +54,6 @@ app.use("/addEmployee", addEmployee);
 const viewEmployee = require("./routes/viewEmployee");
 app.use("/viewEmployee", viewEmployee);
 
-
 //delete and employee
 const deleteEmployee = require("./routes/deleteEmployeeRoute");
 app.use("/deleteEmployee", deleteEmployee);
@@ -62,4 +61,3 @@ app.use("/deleteEmployee", deleteEmployee);
 //update Password
 const updatePassword = require("./routes/updatePassword");
 app.use("/updatepassword", updatePassword);
-
